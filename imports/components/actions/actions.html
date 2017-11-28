@@ -1,0 +1,17 @@
+<header>
+  <h1>What do you wanna do?</h1>
+</header>
+ 
+<login-buttons></login-buttons>
+
+<div class="actions">
+    <button ng-click="$ctrl.chose('Eat')">Eat</button>
+    <button ng-click="$ctrl.chose('Watch')">Watch</button>
+    <button ng-click="$ctrl.chose('Listen')">Listen</button>
+</div>
+<p>
+	You chose ( {{$ctrl.action}} )
+</p>
+<threefood ng-show="$ctrl.showFood()" ></threefood>
+<music ng-show="$ctrl.showListen()"></music>
+<chat ng-show="$ctrl.showListen()"></chat>

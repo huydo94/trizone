@@ -1,0 +1,10 @@
+<div id="chats">
+  <div id="msgBox">
+  	<li ng-repeat="msg in $ctrl.messages">
+    <strong>{{msg.user}} : </strong> {{msg.text}}
+  </li>
+  </div>
+  <form ng-submit="$ctrl.addMsg($ctrl.newMsg)">
+    <input ng-model="$ctrl.newMsg" type="text" name="text" placeholder="Type to add new Msgs"/>
+  </form>
+</div>

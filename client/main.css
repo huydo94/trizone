@@ -1,0 +1,12 @@
+.canvas {
+  /* Perfectly square */
+  width: 640px;
+  height: 320px;
+}
+
+.pixel {
+  /* We'll need 64 total pixels in our HTML */
+  width: 10px;
+  height: 10px;
+  float: left;
+}
