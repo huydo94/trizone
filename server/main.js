@@ -15,6 +15,19 @@ setInterval(function() {
     }
 }, 1000);
 
+var curtimeVid1 = 0;
+setInterval(function() {
+    curtime += 1;
+}, 1000);
+var curtimeVid2 = 0;
+setInterval(function() {
+    curtime += 1;
+}, 1000);
+var curtimeVid3 = 0;
+setInterval(function() {
+    curtimeVid3 += 1;
+}, 1000);
+
 Meteor.methods({
   sendEmail(to, from, subject, text) {
     // Make sure that all arguments are strings.
@@ -29,8 +42,8 @@ Meteor.methods({
                     $sample: {
                         size: 3
                     }
-                });   
-  }, 
+                });
+  },
   timeofsong(){
   	console.log(curtime);
   	return curtime;
@@ -41,5 +54,5 @@ Meteor.startup(() => {
   // code to run on server at startup
   process.env.MAIL_URL = "smtps://postmaster%40sandbox02aa77513abf48d7b8145ec0b38dedb7.mailgun.org:822a485c348ee9e2933784658cbdafe5@smtp.mailgun.org:465";
 
-  
+
 });
