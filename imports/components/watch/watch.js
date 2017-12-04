@@ -36,7 +36,7 @@ $(function() {
       video1.src = result.src;
       video1.currentTime = result.time;
     });
-   }, 500);
+  }, 1000);
   });
   $('#video2').on('ended', function(){
     setTimeout(function() {
@@ -44,7 +44,7 @@ $(function() {
         video2.src = result.src;
         video2.currentTime = result.time;
       });
-    }, 500);
+    }, 1000);
 
   });
   $('#video3').on('ended', function(){
@@ -53,7 +53,7 @@ $(function() {
         video3.src = result.src;
         video3.currentTime = result.time;
       });
-    }, 500);
+    }, 1000);
 
   });
 });

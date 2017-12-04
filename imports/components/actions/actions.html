@@ -4,10 +4,10 @@
 
 <login-buttons></login-buttons>
 
-<div class="actions">
-    <button ng-click="eat=true;watch=false;listen=false; $ctrl.pauseVid();">Eat</button>
-    <button ng-click="eat=false;watch=true;listen=false; $ctrl.pauseAudio()">Watch</button>
-    <button ng-click="eat=false;watch=false;listen=true; $ctrl.pauseVid();">Listen</button>
+<div id="actions">
+    <button class="actionBtn" ng-click="eat=true;watch=false;listen=false; $ctrl.pauseVid();">Eat</button>
+    <button class="actionBtn" ng-click="eat=false;watch=true;listen=false; $ctrl.pauseAudio()">Watch</button>
+    <button class="actionBtn" ng-click="eat=false;watch=false;listen=true; $ctrl.pauseVid();">Listen</button>
 </div>
 
 <threefood ng-show="eat" ></threefood>

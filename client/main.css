@@ -1,3 +1,22 @@
+body {
+  color:white;
+}
+.background-image {
+  position:fixed;
+  left:0;
+  top:0;
+  z-index: -1;
+  display:block;
+  width:100vw;
+  height:100vh;
+  background-image: url('tree.jpg');
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
 .canvas {
   /* Perfectly square */
   width: 640px;
@@ -10,3 +29,35 @@
   height: 10px;
   float: left;
 }
+
+#actions {
+  height:20%;
+  top:40%;
+}
+
+.actionBtn {
+   border: 2px solid #000000;
+   background-color:#ffffff;
+   font-size: 28px;
+   height: 60px;
+   width:200px;
+   opacity: 0.6;
+   border-radius: 12px;
+   margin:10px;
+   }
+.actionBtn:hover {
+   border: 2px solid #000000;
+   text-shadow: #1e4158 0 1px 0;
+   background: #0c1012;
+   background: -webkit-gradient(linear, left top, left bottom, from(#4c5052), to(#0c1012));
+   background: -webkit-linear-gradient(top, #4c5052, #0c1012);
+   background: -moz-linear-gradient(top, #4c5052, #0c1012);
+   background: -ms-linear-gradient(top, #4c5052, #0c1012);
+   background: -o-linear-gradient(top, #4c5052, #0c1012);
+   background-image: -ms-linear-gradient(top, #4c5052 0%, #0c1012 100%);
+   color: #fcfcfc;
+   }
+.actionBtn:active {
+   border: 2px solid #ffffff;
+
+   }
