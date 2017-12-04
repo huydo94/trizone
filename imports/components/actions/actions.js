@@ -3,11 +3,18 @@ import angularMeteor from 'angular-meteor';
 import template from './actions.html';
 
 
- 
-class actionsCtrl {
 
+class actionsCtrl {
+  pauseVids() {
+    video1.pause();
+    video2.pause();
+    video3.pause();
+  }
+  pauseAudio() {
+    song.pause();
+  }
 }
- 
+
 export default angular.module('actions', [
   angularMeteor
 ])

@@ -1,13 +1,13 @@
 <header>
   <h1>What do you wanna do?</h1>
 </header>
- 
+
 <login-buttons></login-buttons>
 
 <div class="actions">
-    <button ng-click="eat=true;watch=false;listen=false;">Eat</button>
-    <button ng-click="eat=false;watch=true;listen=false;">Watch</button>
-    <button ng-click="eat=false;watch=false;listen=true;">Listen</button>
+    <button ng-click="eat=true;watch=false;listen=false; $ctrl.pauseVid();">Eat</button>
+    <button ng-click="eat=false;watch=true;listen=false; $ctrl.pauseAudio()">Watch</button>
+    <button ng-click="eat=false;watch=false;listen=true; $ctrl.pauseVid();">Listen</button>
 </div>
 
 <threefood ng-show="eat" ></threefood>

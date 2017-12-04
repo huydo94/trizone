@@ -1,12 +1,15 @@
 <chat></chat>
 
-<button ng-click="vid1=true; vid2=false; vid3=false;">1</button>
-<button ng-click="vid1=false; vid2=true; vid3=false;">2</button>
-<button ng-click="vid1=false; vid2=false; vid3=true;">3</button>
+<button ng-click="$ctrl.vid1(); vid1=true; vid2=false; vid3=false;">1</button>
+<button ng-click="$ctrl.vid2(); vid1=false; vid2=true; vid3=false;">2</button>
+<button ng-click="$ctrl.vid3(); vid1=false; vid2=false; vid3=true;">3</button>
 
 <vidroom ng-show="vid1">
-  Vid 1
+  <video id="video1" height="576" width="1024" autoplay></video>
   </vidroom>
 <vidroom ng-show="vid2">
-Vid2</vidroom>
-<vidroom ng-show="vid3">Vid3</vidroom>
+  <video id="video2" height="576" width="1024" autoplay></video>
+</vidroom>
+<vidroom ng-show="vid3">
+  <video id="video3"  height="576" width="1024" autoplay></video>
+</vidroom>

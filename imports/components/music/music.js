@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import template from './music.html';
 
- 
+
 class musicCtrl {
   tunein(){
   	Meteor.call("timeofsong",function(error,result){
@@ -11,7 +11,7 @@ class musicCtrl {
   	});
   }
 }
- 
+
 export default angular.module('music', [
   angularMeteor
 ])

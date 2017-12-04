@@ -5,7 +5,7 @@ import '../imports/api/pixels.js';
 import {
     fooditems
 } from '../imports/api/fooditems.js';
-import { Email } from 'meteor/email'
+import { Email } from 'meteor/email';
 
 var curtime = 0;
 setInterval(function() {
@@ -15,18 +15,37 @@ setInterval(function() {
     }
 }, 1000);
 
-var curtimeVid1 = 0;
+var vidSrc = ['Pikachu.mp4', 'RickMorty.mp4', 'Unicorn.mp4'];
+var vidLeng = {'Pikachu.mp4':8, 'RickMorty.mp4':8, 'Unicorn.mp4':8};
+var vidSrc1 = 'Pikachu.mp4', vidSrc2 = 'RickMorty.mp4', vidSrc3 = 'Unicorn.mp4';
+var vidLeng1 = vidLeng[vidSrc1], vidLeng2 = vidLeng[vidSrc2], vidLeng3 = vidLeng[vidSrc3];
+
+var curtimeVid1 = 0, curtimeVid2 = 0, curtimeVid3 = 0;
 setInterval(function() {
-    curtime += 1;
-}, 1000);
-var curtimeVid2 = 0;
-setInterval(function() {
-    curtime += 1;
-}, 1000);
-var curtimeVid3 = 0;
-setInterval(function() {
+    curtimeVid1 += 1;
+    if (curtimeVid1 > vidLeng1) {
+      pickNextVid();
+      curtimeVid1 = 0;
+    }
+    curtimeVid2 += 1;
     curtimeVid3 += 1;
 }, 1000);
+
+function pickNextVid() {
+  var tempVidSrc = vidSrc.slice();
+  var index = vidSrc.indexOf(vidSrc1);
+  console.log(vidSrc1);
+  console.log(index);
+  console.log(vidSrc);
+  if (index > -1) {
+    tempVidSrc.splice(index,1);
+  }
+  vidSrc1 = tempVidSrc[Math.floor(Math.random()*tempVidSrc.length)];
+  vidLeng1 = vidLeng[vidSrc1];
+  console.log(tempVidSrc);
+  console.log(vidSrc1);
+  console.log(vidLeng1);
+}
 
 Meteor.methods({
   sendEmail(to, from, subject, text) {
@@ -47,6 +66,18 @@ Meteor.methods({
   timeofsong(){
   	console.log(curtime);
   	return curtime;
+  },
+  getVid1() {
+    var info = {src:vidSrc1, time:vidLeng1};
+    return info;
+  },
+  getVid2() {
+    var info = {src:vidSrc2, time:vidLeng2};
+    return info;
+  },
+  getVid3() {
+    var info = {src:vidSrc3, time:vidLeng3};
+    return info;
   }
 });
 
