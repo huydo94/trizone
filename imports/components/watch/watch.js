@@ -1,6 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import template from './watch.html';
+import { Session } from 'meteor/session'
 
 class watchCtrl {
   vid1() {
@@ -9,6 +10,7 @@ class watchCtrl {
       video1.currentTime = result.time;
       video2.pause();
       video3.pause();
+      Session.set('currentRoom',1);
     });
   }
   vid2() {
@@ -17,6 +19,7 @@ class watchCtrl {
       video2.currentTime = result.time;
       video1.pause();
       video3.pause();
+      Session.set('currentRoom',2);
     });
   }
   vid3() {
@@ -25,6 +28,7 @@ class watchCtrl {
       video3.currentTime = result.time;
       video1.pause();
       video2.pause();
+      Session.set('currentRoom',3);
     });
   }
 }

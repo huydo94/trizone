@@ -2,8 +2,12 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import template from './chat.html';
 import { messages } from '../../api/messages.js';
+import { messages1 } from '../../api/messages.js';
+import { messages2 } from '../../api/messages.js';
+import { messages3 } from '../../api/messages.js';
 
- 
+import { Session } from 'meteor/session'
+
 class chatCtrl {
 
   constructor($scope) {
@@ -11,29 +15,71 @@ class chatCtrl {
     
     this.helpers({
       messages() {
-        return messages.find({});
+        var currentRoom = Session.get('currentRoom');
+        console.log(currentRoom);
+        switch(currentRoom){
+          case 1:
+          return messages1.find({});
+          break;
+          case 2:
+          return messages2.find({});
+          break;
+          case 3:
+          return messages3.find({});
+          break;
+          default:
+          return messages.find({});
+          break;
+        }
       }
     })
   }
 
   addMsg(newMsg) {
     // Insert a task into the collection
-    messages.insert({
-      text:newMsg,
-      user: Meteor.user().username,
-      createdAt: new Date
-    });
- 
+
+    var currentRoom = Session.get('currentRoom');
+    switch(currentRoom){
+      case 1:
+      messages1.insert({
+        text:newMsg,
+        user: Meteor.user().username,
+        createdAt: new Date
+      });
+      break;
+      case 2:
+      messages2.insert({
+        text:newMsg,
+        user: Meteor.user().username,
+        createdAt: new Date
+      });
+      break;
+      case 3:
+      messages3.insert({
+        text:newMsg,
+        user: Meteor.user().username,
+        createdAt: new Date
+      });
+      break;
+      default:
+      messages.insert({
+        text:newMsg,
+        user: Meteor.user().username,
+        createdAt: new Date
+      });
+      break;
+    }
+
     // Clear form
     this.newMsg = '';
   }
 
 }
- 
+
 export default angular.module('chat', [
   angularMeteor
-])
-  .component('chat', {
-    templateUrl: 'imports/components/chat/chat.html',
-    controller: ['$scope', chatCtrl]
-  });
+  ])
+.component('chat', {
+  templateUrl: 'imports/components/chat/chat.html',
+  controller: ['$scope', chatCtrl]
+});

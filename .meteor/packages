@@ -26,3 +26,4 @@ check
 ejson
 meteorhacks:aggregate
 webdeb:app-loader
+session
