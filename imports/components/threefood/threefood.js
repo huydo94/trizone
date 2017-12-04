@@ -14,6 +14,9 @@ class threefoodCtrl {
         this.confirmview = false;
         this.helpers({
             foods() {
+                Meteor.call("get3foods", function(error, result) {
+                    food3 = result;
+                });
                 return fooditems.find({}, {
                     limit: 3
                 });
@@ -59,10 +62,12 @@ class threefoodCtrl {
                 profile: newAddress
             }
         });
+        var timeoforder = new Date();
+        var timeString = timeoforder.toString();
         foodorders.insert({
             text: this.foodchose.name,
             user: Meteor.userId(),
-            createdAt: new Date
+            createdAt: timeString
         });
         var emailcontent = 'Order of ' + this.foodchose.name + ' to ' + this.streetAd + ',' + this.city + ',' + this.state + ',' + this.zipcode + '. Contact: ' + this.phone + '. Name: ' + Meteor.user().username;
         Meteor.call('sendEmail', this.foodchose.email, Meteor.user().username + '<do.huyd@gmail.com>', 'New order', emailcontent);

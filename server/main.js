@@ -24,27 +24,53 @@ var curtimeVid1 = 0, curtimeVid2 = 0, curtimeVid3 = 0;
 setInterval(function() {
     curtimeVid1 += 1;
     if (curtimeVid1 > vidLeng1) {
-      pickNextVid();
+      pickNextVid(1);
       curtimeVid1 = 0;
     }
     curtimeVid2 += 1;
+    if (curtimeVid2 > vidLeng2) {
+      pickNextVid(2);
+      curtimeVid2 = 0;
+    }
     curtimeVid3 += 1;
+    if (curtimeVid3 > vidLeng3) {
+      pickNextVid(3);
+      curtimeVid3 = 0;
+    }
 }, 1000);
 
-function pickNextVid() {
+function pickNextVid(num) {
   var tempVidSrc = vidSrc.slice();
-  var index = vidSrc.indexOf(vidSrc1);
-  console.log(vidSrc1);
-  console.log(index);
-  console.log(vidSrc);
-  if (index > -1) {
-    tempVidSrc.splice(index,1);
+
+  switch (num) {
+    case 1:
+        var index = vidSrc.indexOf(vidSrc1);
+        if (index > -1) {
+          tempVidSrc.splice(index,1);
+        }
+        vidSrc1 = tempVidSrc[Math.floor(Math.random()*tempVidSrc.length)];
+        vidLeng1 = vidLeng[vidSrc1];
+        break;
+
+    case 2:
+        var index = vidSrc.indexOf(vidSrc2);
+        if (index > -1) {
+          tempVidSrc.splice(index,1);
+        }
+        vidSrc2 = tempVidSrc[Math.floor(Math.random()*tempVidSrc.length)];
+        vidLeng2 = vidLeng[vidSrc2];
+        break;
+
+    case 3:
+        var index = vidSrc.indexOf(vidSrc3);
+        if (index > -1) {
+          tempVidSrc.splice(index,1);
+        }
+        vidSrc3 = tempVidSrc[Math.floor(Math.random()*tempVidSrc.length)];
+        vidLeng3 = vidLeng[vidSrc3];
+        break;
   }
-  vidSrc1 = tempVidSrc[Math.floor(Math.random()*tempVidSrc.length)];
-  vidLeng1 = vidLeng[vidSrc1];
-  console.log(tempVidSrc);
-  console.log(vidSrc1);
-  console.log(vidLeng1);
+  
 }
 
 Meteor.methods({
@@ -64,19 +90,18 @@ Meteor.methods({
                 });
   },
   timeofsong(){
-  	console.log(curtime);
   	return curtime;
   },
   getVid1() {
-    var info = {src:vidSrc1, time:vidLeng1};
+    var info = {src:vidSrc1, time:curtimeVid1};
     return info;
   },
   getVid2() {
-    var info = {src:vidSrc2, time:vidLeng2};
+    var info = {src:vidSrc2, time:curtimeVid2};
     return info;
   },
   getVid3() {
-    var info = {src:vidSrc3, time:vidLeng3};
+    var info = {src:vidSrc3, time:curtimeVid3};
     return info;
   }
 });

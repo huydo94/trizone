@@ -1,7 +1,9 @@
 <button ng-repeat="food in $ctrl.foods">
 	<div ng-click="$ctrl.foodChosen(food)">
 		{{food.name}} <br>
-		{{food.price}}
+		Contains: {{food.ingredients}} <br>
+        {{food.price}} <br>
+
 	</div>
 </button>
 <br>

@@ -16,6 +16,9 @@ class paintingCtrl {
     });
   }
   changeColor(pixel,currentColor){
+    if(currentColor == null){
+      currentColor = 'black';
+    }
     pixels.update(pixel._id,
       {$set:{color:currentColor}});
   }
