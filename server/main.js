@@ -16,7 +16,7 @@ setInterval(function() {
 }, 1000);
 
 var vidSrc = ['Pikachu.mp4', 'RickMorty.mp4', 'Unicorn.mp4'];
-var vidLeng = {'Pikachu.mp4':8, 'RickMorty.mp4':8, 'Unicorn.mp4':8};
+var vidLeng = {'Pikachu.mp4':731, 'RickMorty.mp4':294, 'Unicorn.mp4':225};
 var vidSrc1 = 'Pikachu.mp4', vidSrc2 = 'RickMorty.mp4', vidSrc3 = 'Unicorn.mp4';
 var vidLeng1 = vidLeng[vidSrc1], vidLeng2 = vidLeng[vidSrc2], vidLeng3 = vidLeng[vidSrc3];
 
@@ -70,7 +70,7 @@ function pickNextVid(num) {
         vidLeng3 = vidLeng[vidSrc3];
         break;
   }
-  
+
 }
 
 Meteor.methods({
