@@ -35,7 +35,6 @@ body {
 }
 
 .pixel {
-  /* We'll need 64 total pixels in our HTML */
   width: 10px;
   height: 10px;
   float: left;
@@ -74,7 +73,7 @@ body {
   width:100%;
   text-align: center;
   position:absolute;
-  bottom: 40px;
+  bottom: 20px;
 }
 #doodleBtn {
   margin: 0 auto;
@@ -83,14 +82,14 @@ painting {
   position:absolute;
   z-index: 100;
   text-align: center;
-  width:100%;
-  height:40%;
   top:30%;
-  background-color: white;
+  left:25%;
   color: black;
 }
 .vidroom {
-  height:580px;
+  height:450px;
+  width:80%;
+  float:left;
   padding:0;
   margin:0;
 }
@@ -99,7 +98,7 @@ painting {
   background:#ffffff;
   color:#000000;
   display:inline-block;
-  height:97%;
+  height:90%;
   width: 300px;
   vertical-align: top;
 }
@@ -120,21 +119,20 @@ painting {
   bottom:0;
 }
 #msgSubmit >input {
-  width:95%;
-  height: 50px;
+  width:92%;
+  height: 45px;
   border: 2px solid black;
   border-radius: 4px;
 }
 threefood {
   text-align: center;
   display:block;
-  background:black;
   color:white;
 }
 .foodBtn {
   margin: 10px;
   text-align: center;
-  height:40%;
+  height:150px;
   width:30%;
   font-size: 24px;
   transition-duration: 0.4s;
@@ -184,6 +182,7 @@ threefood {
 }
 #taylor {
   text-align: center;
+  position:relative;
 }
 #muteTaylor {
   font-size: 28px;
@@ -191,24 +190,23 @@ threefood {
   height: 80px;
   width:150px;
   left:49%;
-  top:45%;
+  top:54%;
   background-color: red;
   color:white;
 }
 
 #container {
     border-radius: 5px;
-    background-color: #444970;
-    padding: 20px;
-    width:30%;
-    margin: auto;
+    padding: 13px;
+    width:37%;
+    float:right;
 }
 
 .col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
-    color: pink;
+    text-align: center;
 }
 
 .col-75 {
@@ -227,10 +225,23 @@ threefood {
     font-size: 18px;
     border-radius: 4px;
     cursor: pointer;
+    margin: 3px;
 }
 
 #confirmorder:hover {
     background-color: red;
+}
+#FAV{
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    float:left;
+}
+
+#FAV:hover {
+    background-color: yellow;
 }
 .roombtn{
     padding: 6px 10px;
@@ -259,4 +270,20 @@ threefood {
 .colorbtn:hover{
   margin:3px;
   border: solid black 2px;
+}
+.listbox{
+    width:300px;
+    padding: 13px;
+    height:290px;
+    overflow: auto;
+    border-radius: 5px;
+    float:left;
+    text-align: left;
+}
+.listbox2{
+    width:15%;
+    height:300px;
+    float:right;
+    margin-right: 20px;
+    overflow: auto;
 }

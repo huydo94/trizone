@@ -40,6 +40,10 @@ class threefoodCtrl {
     foodChosen(food) {
         this.confirmview = true;
         this.foodchose = food;
+        if (!Meteor.userId()) {
+            alert("You need to log in to do this.");
+            throw new Meteor.Error('not-authorized');
+        }
         this.phone = Meteor.user().profile.phone;
         this.city = Meteor.user().profile.city;
         this.state = Meteor.user().profile.state;
@@ -50,6 +54,10 @@ class threefoodCtrl {
         return this.confirmview;
     }
     makeOrder() {
+        if (!Meteor.userId()) {
+            alert("You need to log in to do this.");
+            throw new Meteor.Error('not-authorized');
+        }
         var newAddress = {
             phone: this.phone,
             city: this.city,

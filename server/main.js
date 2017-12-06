@@ -5,6 +5,8 @@ import '../imports/api/pixels.js';
 import {
     fooditems
 } from '../imports/api/fooditems.js';
+import { vidFav } from '../imports/api/messages.js';
+
 import { Email } from 'meteor/email';
 
 var curtime = 0;
@@ -103,6 +105,48 @@ Meteor.methods({
   getVid3() {
     var info = {src:vidSrc3, time:curtimeVid3};
     return info;
+  },
+  'favoriteVid'(curRoom){
+    switch(curRoom){
+      case 1:
+      vidFav.update({
+        video:vidSrc1,
+        user: Meteor.userId()
+      },{
+        video:vidSrc1,
+        user: Meteor.userId()
+      },
+      {
+        upsert: true
+      });    
+      break;
+      case 2:
+      vidFav.update({
+        video:vidSrc2,
+        user: Meteor.userId()
+      },{
+        video:vidSrc2,
+        user: Meteor.userId()
+      },
+      {
+        upsert: true
+      });    
+      break;
+      case 3:
+      vidFav.update({
+        video:vidSrc3,
+        user: Meteor.userId()
+      },{
+        video:vidSrc3,
+        user: Meteor.userId()
+      },
+      {
+        upsert: true
+      });    
+      break;
+      default:
+      break;
+    }
   }
 });
 

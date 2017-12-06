@@ -14,10 +14,10 @@
 
 <div id="container" ng-show="$ctrl.showConfirm()">
 	<form ng-submit="$ctrl.makeOrder()">
-    <span >Where do you want your {{$ctrl.foodchose.name}} to be delivered to?    </span>  <br>
+    <span style="color:white;">Where do you want your {{$ctrl.foodchose.name}} to be delivered to?    </span>  <br>
     <div class="row">
       <div class="col-25">
-        Street Address:
+        Street Address
       </div>
       <div class="col-75">
         <input class="forminput" ng-model="$ctrl.streetAd" type="text" name="text" required=""/>
@@ -25,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-25">
-        Zip Code:
+        Zip Code
       </div>
       <div class="col-75">
         <input class="forminput" ng-model="$ctrl.zipcode" type="text" name="text" required="" />
@@ -34,7 +34,7 @@
 
     <div class="row">
       <div class="col-25">
-        City:
+        City
       </div>
       <div class="col-75">
         <input class="forminput" ng-model="$ctrl.city" type="text" name="text" required=""/>
@@ -43,7 +43,7 @@
 
     <div class="row">
       <div class="col-25">
-        State:
+        State
       </div>
       <div class="col-75">
         <input class="forminput" ng-model="$ctrl.state" type="text" name="text" required=""/>
@@ -52,20 +52,20 @@
 
     <div class="row">
       <div class="col-25">
-        Phone:
+        Phone
       </div>
       <div class="col-75">
         <input class="forminput" ng-model="$ctrl.phone" type="text" name="text" required=""/>
       </div>
     </div>
-    <br>
     <input type="submit" value="Confirm Order" id="confirmorder"/>
   </form>
 </div>
 
-<br><br>
+<div class="listbox"> 
 Your past orders:
 <li ng-repeat="order in $ctrl.foodorders">
-	{{order.text}} - {{order.createdAt}}
+	{{order.text}}
 
 </li>
+</div>

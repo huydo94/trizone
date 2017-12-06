@@ -7,14 +7,26 @@
 </div>
 
 <div id="vidRoom1" class="vidroom" ng-show="vid1">
-  <video id="video1" height="576" width="1024" autoplay></video>
+  <video id="video1" height="360" width="640" autoplay></video>
   <chat></chat>
 </div>
+
 <div id="vidRoom2" class="vidroom" ng-show="vid2">
-  <video id="video2" height="576" width="1024" autoplay></video>
+  <video id="video2" height="360" width="640" autoplay></video>
   <chat></chat>
 </div>
 <div id="vidRoom3" class="vidroom"  ng-show="vid3">
-  <video id="video3"  height="576" width="1024" autoplay></video>
+  <video id="video3"  height="360" width="640" autoplay></video>
   <chat></chat>
 </div>
+<div class="listbox2"> 
+<button id="FAV" ng-click="$ctrl.favoriteVid();">Favorite</button>
+<br>
+<br>
+<br>
+Your favorites:<br>
+<li ng-repeat="item in $ctrl.favorites">
+	{{item.video}}
+</li>
+</div>
+
