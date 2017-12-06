@@ -8,20 +8,58 @@
 </button>
 <br>
 
-<button ng-click="$ctrl.suggest3()">None of these</button>
+<button id="skipbtn" ng-click="$ctrl.suggest3()"><span>None of these</span></button>
 <br>
 <br>
 
-<div ng-show="$ctrl.showConfirm()">
+<div id="container" ng-show="$ctrl.showConfirm()">
 	<form ng-submit="$ctrl.makeOrder()">
-    You chose ( {{$ctrl.foodchose.name}} ) <br>
-    Street Address: <input ng-model="$ctrl.streetAd" type="text" name="text" required=""/><br>
-    Zip Code: <input ng-model="$ctrl.zipcode" type="text" name="text" required="" /><br>
-    City: <input ng-model="$ctrl.city" type="text" name="text" required=""/><br>
-    State: <input ng-model="$ctrl.state" type="text" name="text" required=""/><br>
-    Phone: <input ng-model="$ctrl.phone" type="text" name="text" required=""/><br>
+    <span >Where do you want your {{$ctrl.foodchose.name}} to be delivered to?    </span>  <br>
+    <div class="row">
+      <div class="col-25">
+        Street Address:
+      </div>
+      <div class="col-75">
+        <input class="forminput" ng-model="$ctrl.streetAd" type="text" name="text" required=""/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        Zip Code:
+      </div>
+      <div class="col-75">
+        <input class="forminput" ng-model="$ctrl.zipcode" type="text" name="text" required="" />
+      </div>
+    </div>
 
-    <input type="submit" value="Confirm Order" />
+    <div class="row">
+      <div class="col-25">
+        City:
+      </div>
+      <div class="col-75">
+        <input class="forminput" ng-model="$ctrl.city" type="text" name="text" required=""/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        State:
+      </div>
+      <div class="col-75">
+        <input class="forminput" ng-model="$ctrl.state" type="text" name="text" required=""/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        Phone:
+      </div>
+      <div class="col-75">
+        <input class="forminput" ng-model="$ctrl.phone" type="text" name="text" required=""/>
+      </div>
+    </div>
+    <br>
+    <input type="submit" value="Confirm Order" id="confirmorder"/>
   </form>
 </div>
 
