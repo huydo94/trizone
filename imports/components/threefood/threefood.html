@@ -1,15 +1,15 @@
-<button ng-repeat="food in $ctrl.foods">
+<button class="foodBtn" ng-repeat="food in $ctrl.foods">
 	<div ng-click="$ctrl.foodChosen(food)">
-		{{food.name}} <br>
+		<b>{{food.name}}</b> <br>
 		Contains: {{food.ingredients}} <br>
-        {{food.price}} <br>
+        Price: ${{food.price}} <br>
 
 	</div>
 </button>
 <br>
 
+<button ng-click="$ctrl.suggest3()">None of these</button>
 <br>
-<button ng-click="$ctrl.suggest3()">Skip</button>
 <br>
 
 <div ng-show="$ctrl.showConfirm()">
@@ -20,11 +20,12 @@
     City: <input ng-model="$ctrl.city" type="text" name="text" required=""/><br>
     State: <input ng-model="$ctrl.state" type="text" name="text" required=""/><br>
     Phone: <input ng-model="$ctrl.phone" type="text" name="text" required=""/><br>
-    
+
     <input type="submit" value="Confirm Order" />
   </form>
 </div>
 
+<br><br>
 Your past orders:
 <li ng-repeat="order in $ctrl.foodorders">
 	{{order.text}} - {{order.createdAt}}

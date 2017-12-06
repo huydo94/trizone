@@ -1,5 +1,11 @@
 body {
   color:white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-y: hidden;
+  overflow-x:hidden;
+  position:fixed;
+  height:100%;
+  width:100%;
 }
 .background-image {
   position:fixed;
@@ -7,15 +13,20 @@ body {
   top:0;
   z-index: -1;
   display:block;
-  width:100vw;
-  height:100vh;
-  background-image: url('tree.jpg');
+  width:100%;
+  height:100%;
+  background-image: url('wood.jpg');
   background-size: cover;
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -o-filter: blur(3px);
   -ms-filter: blur(3px);
   filter: blur(3px);
+}
+#login-buttons {
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 .canvas {
   /* Perfectly square */
@@ -31,33 +42,109 @@ body {
 }
 
 #actions {
-  height:20%;
-  top:40%;
+  text-align: center;
 }
 
 .actionBtn {
-   border: 2px solid #000000;
-   background-color:#ffffff;
-   font-size: 28px;
-   height: 60px;
-   width:200px;
-   opacity: 0.6;
-   border-radius: 12px;
-   margin:10px;
-   }
+  border: 2px solid #000000;
+  background-color:#ffffff;
+  font-size: 28px;
+  height: 60px;
+  width:200px;
+  opacity: 0.6;
+  border-radius: 12px;
+  margin:10px;
+}
 .actionBtn:hover {
-   border: 2px solid #000000;
-   text-shadow: #1e4158 0 1px 0;
-   background: #0c1012;
-   background: -webkit-gradient(linear, left top, left bottom, from(#4c5052), to(#0c1012));
-   background: -webkit-linear-gradient(top, #4c5052, #0c1012);
-   background: -moz-linear-gradient(top, #4c5052, #0c1012);
-   background: -ms-linear-gradient(top, #4c5052, #0c1012);
-   background: -o-linear-gradient(top, #4c5052, #0c1012);
-   background-image: -ms-linear-gradient(top, #4c5052 0%, #0c1012 100%);
-   color: #fcfcfc;
-   }
+  border: 2px solid #000000;
+  text-shadow: #1e4158 0 1px 0;
+  background: #0c1012;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4c5052), to(#0c1012));
+  background: -webkit-linear-gradient(top, #4c5052, #0c1012);
+  background: -moz-linear-gradient(top, #4c5052, #0c1012);
+  background: -ms-linear-gradient(top, #4c5052, #0c1012);
+  background: -o-linear-gradient(top, #4c5052, #0c1012);
+  background-image: -ms-linear-gradient(top, #4c5052 0%, #0c1012 100%);
+  color: #fcfcfc;
+}
 .actionBtn:active {
-   border: 2px solid #ffffff;
-
-   }
+  border: 2px solid #ffffff;
+}
+#doodleBtn-container {
+  width:100%;
+  text-align: center;
+  position:absolute;
+  bottom: 40px;
+}
+#doodleBtn {
+  margin: 0 auto;
+}
+painting {
+  position:absolute;
+  z-index: 100;
+  text-align: center;
+  width:100%;
+  height:40%;
+  top:30%;
+  background-color: white;
+  color: black;
+}
+.vidroom {
+  height:580px;
+  padding:0;
+  margin:0;
+}
+#chats {
+  padding:5px 10px;
+  background:#ffffff;
+  color:#000000;
+  display:inline-block;
+  height:97%;
+  width: 300px;
+  vertical-align: top;
+}
+#chat-container {
+  height:100%;
+  width:100%;
+  position:relative;
+}
+#msgBox {
+  overflow-x:hidden;
+  overflow-y:scroll;
+  height:95%;
+  width:100%;
+}
+#msgSubmit {
+  position:absolute;
+  width:100%;
+  bottom:0;
+}
+#msgSubmit >input {
+  width:100%;
+}
+threefood {
+  text-align: center;
+  display:block;
+  background:black;
+  color:white;
+}
+.foodBtn {
+  margin: 10px;
+  text-align: center;
+  height:40%;
+  width:30%;
+  font-size: 24px;
+}
+#taylor {
+  text-align: center;
+}
+#muteTaylor {
+  font-size: 28px;
+  position:absolute;
+  height: 80px;
+  width:150px;
+  left:49%;
+  top:45%;
+  background-color: red;
+  color:white;
+}

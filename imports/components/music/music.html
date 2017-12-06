@@ -1,8 +1,10 @@
-  <audio id="song" controls loop>
+  <audio id="song" loop>
   <source src="tay.mp3" type="audio/mpeg">
     Your browser does not support mp3.
 </audio>
 <br>
-<button ng-click="$ctrl.tunein()">Let's tune in! </button>
-<br>
-<painting></painting>
+<div id="taylor">
+  <img src="taylor.jpg" style="width:682px; height:512px"></img>
+  <button id="muteTaylor" ng-click="$ctrl.mute()">MUTE TAYLOR</button>
+</div>
+  <br>

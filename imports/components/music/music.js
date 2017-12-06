@@ -4,11 +4,8 @@ import template from './music.html';
 
 
 class musicCtrl {
-  tunein(){
-  	Meteor.call("timeofsong",function(error,result){
-  	song.currentTime = result;
-  	song.play();
-  	});
+  mute() {
+    $('#song').prop('muted', !$('#song').prop('muted'));
   }
 }
 
